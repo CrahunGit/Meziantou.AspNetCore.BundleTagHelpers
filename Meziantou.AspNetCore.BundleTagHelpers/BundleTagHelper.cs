@@ -134,8 +134,10 @@ namespace Meziantou.AspNetCore.BundleTagHelpers
             if (filePath.StartsWith(root))
             {
                 var urlHelper = _urlHelperFactory.GetUrlHelper(ViewContext);
-                return urlHelper.Content("~/" + filePath.Substring(root.Length).Replace('\\', '/'));
+                return urlHelper.Content("~/" + filePath.Substring(root.Length).Replace('\\', '/')).Replace(".min.min", ".min");
             }
+
+            
 
             return null;
         }

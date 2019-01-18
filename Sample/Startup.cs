@@ -27,8 +27,8 @@ namespace Sample
             services.AddMvc();
             services.AddBundles(options =>
             {
-                options.UseBundles = false;
-                options.UseMinifiedFiles = false;
+                options.UseBundles = true;
+                options.UseMinifiedFiles = true;
                 options.AppendVersion = true;
             });
         }
