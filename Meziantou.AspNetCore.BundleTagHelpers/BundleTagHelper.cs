@@ -7,7 +7,6 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Html;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Mvc.Routing;
-using Microsoft.AspNetCore.Mvc.TagHelpers.Internal;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using Microsoft.AspNetCore.Razor.TagHelpers;
 using Microsoft.Extensions.Caching.Memory;
@@ -23,14 +22,15 @@ namespace Meziantou.AspNetCore.BundleTagHelpers
         private readonly IMemoryCache _cache;
         private readonly HtmlEncoder _htmlEncoder;
         private readonly IUrlHelperFactory _urlHelperFactory;
-        private FileVersionProvider _fileVersionProvider;
+        private readonly IFileVersionProvider _fileVersionProvider;
 
-        public BundleTagHelper(IHostingEnvironment hostingEnvironment, IMemoryCache cache, HtmlEncoder htmlEncoder, IUrlHelperFactory urlHelperFactory, BundleOptions options = null, IBundleProvider bundleProvider = null)
+        public BundleTagHelper(IHostingEnvironment hostingEnvironment, IMemoryCache cache, HtmlEncoder htmlEncoder, IUrlHelperFactory urlHelperFactory, BundleOptions options = null, IBundleProvider bundleProvider = null, IFileVersionProvider fileVersionProvider = null)
         {
             if (hostingEnvironment == null) throw new ArgumentNullException(nameof(hostingEnvironment));
             if (cache == null) throw new ArgumentNullException(nameof(cache));
             if (htmlEncoder == null) throw new ArgumentNullException(nameof(htmlEncoder));
             if (urlHelperFactory == null) throw new ArgumentNullException(nameof(urlHelperFactory));
+            if (fileVersionProvider == null) throw new ArgumentNullException(nameof(fileVersionProvider));
 
             if (options == null)
             {
@@ -49,6 +49,7 @@ namespace Meziantou.AspNetCore.BundleTagHelpers
             _cache = cache;
             _htmlEncoder = htmlEncoder;
             _urlHelperFactory = urlHelperFactory;
+            _fileVersionProvider = fileVersionProvider;
         }
 
         [HtmlAttributeNotBound]
@@ -113,22 +114,12 @@ namespace Meziantou.AspNetCore.BundleTagHelpers
 
         private string GetVersionedSrc(string srcValue)
         {
-            EnsureFileVersionProvider();
-
             if (_options.AppendVersion)
             {
-                srcValue = _fileVersionProvider.AddFileVersionToPath(srcValue);
+                srcValue = _fileVersionProvider.AddFileVersionToPath(ViewContext.HttpContext.Request.PathBase, srcValue);
             }
 
             return srcValue;
-        }
-
-        private void EnsureFileVersionProvider()
-        {
-            if (_fileVersionProvider == null)
-            {
-                _fileVersionProvider = new FileVersionProvider(_hostingEnvironment.WebRootFileProvider, _cache, ViewContext.HttpContext.Request.PathBase);
-            }
         }
 
         private string GetSrc(string path)
