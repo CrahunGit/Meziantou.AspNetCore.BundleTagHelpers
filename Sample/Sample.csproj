@@ -23,6 +23,6 @@
     <PackageReference Include="Microsoft.VisualStudio.Web.BrowserLink.Loader" Version="14.1.0" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Meziantou.AspNetCore.BundleTagHelpers\Meziantou.AspNetCore.BundleTagHelpers.csproj" />
+    <ProjectReference Include="..\Crahun.AspNetCore.BundleTagHelpers\Crahun.AspNetCore.BundleTagHelpers.csproj" />
   </ItemGroup>
 </Project>

@@ -1,4 +1,4 @@
-namespace Meziantou.AspNetCore.BundleTagHelpers
+namespace Crahun.AspNetCore.BundleTagHelpers
 {
     public interface IBundleProvider
     {

@@ -1,4 +1,4 @@
-﻿using Meziantou.AspNetCore.BundleTagHelpers;
+﻿using Crahun.AspNetCore.BundleTagHelpers;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;

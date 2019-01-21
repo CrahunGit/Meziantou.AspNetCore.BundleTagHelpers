@@ -2,7 +2,7 @@ using System;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Meziantou.AspNetCore.BundleTagHelpers
+namespace Crahun.AspNetCore.BundleTagHelpers
 {
     public static class BundleExtensions
     {

@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26403.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Meziantou.AspNetCore.BundleTagHelpers", "Meziantou.AspNetCore.BundleTagHelpers\Meziantou.AspNetCore.BundleTagHelpers.csproj", "{E982D7F8-82FE-4E43-88CF-B803009DA3D1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Crahun.AspNetCore.BundleTagHelpers", "Crahun.AspNetCore.BundleTagHelpers\Crahun.AspNetCore.BundleTagHelpers.csproj", "{E982D7F8-82FE-4E43-88CF-B803009DA3D1}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sample", "Sample\Sample.csproj", "{4C370620-16F3-4678-B056-638307621DC9}"
 EndProject
@@ -44,5 +44,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {99415AF7-390B-4751-8074-1BC5D2EC4D7F}
 	EndGlobalSection
 EndGlobal

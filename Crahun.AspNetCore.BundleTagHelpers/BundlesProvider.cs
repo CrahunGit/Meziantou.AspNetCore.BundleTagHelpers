@@ -4,7 +4,7 @@ using System.IO;
 using System.Linq;
 using BundlerMinifier;
 
-namespace Meziantou.AspNetCore.BundleTagHelpers
+namespace Crahun.AspNetCore.BundleTagHelpers
 {
     public class BundleProvider : IBundleProvider, IDisposable
     {

@@ -11,7 +11,7 @@ using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using Microsoft.AspNetCore.Razor.TagHelpers;
 using Microsoft.Extensions.Caching.Memory;
 
-namespace Meziantou.AspNetCore.BundleTagHelpers
+namespace Crahun.AspNetCore.BundleTagHelpers
 {
     [HtmlTargetElement("bundle")]
     public class BundleTagHelper : TagHelper

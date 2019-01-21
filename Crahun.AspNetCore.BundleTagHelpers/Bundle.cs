@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Meziantou.AspNetCore.BundleTagHelpers
+namespace Crahun.AspNetCore.BundleTagHelpers
 {
     public class Bundle
     {

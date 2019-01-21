@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Hosting;
 
-namespace Meziantou.AspNetCore.BundleTagHelpers
+namespace Crahun.AspNetCore.BundleTagHelpers
 {
     public class BundleOptions
     {
