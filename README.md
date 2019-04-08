@@ -32,11 +32,11 @@ The code in the directory `BundlerMinifier` comes from the [BundlerMinifier repo
 
 # How to use
 
-- Install NuGet package `Meziantou.AspNetCore.BundleTagHelpers`
+- Install NuGet package `Crahun.AspNetCore.BundleTagHelpers`
 - Register the tag helpers:
 
 ```
-@addTagHelper *, Meziantou.AspNetCore.BundleTagHelpers
+@addTagHelper *, Crahun.AspNetCore.BundleTagHelpers
 ```
 
 - Use the tag helper
@@ -49,7 +49,7 @@ The code in the directory `BundlerMinifier` comes from the [BundlerMinifier repo
 - (optional) Edit the `Startup.cs` file:
 
 ```
-//using Meziantou.AspNetCore.BundleTagHelpers;
+//using Crahun.AspNetCore.BundleTagHelpers;
 
 public void ConfigureServices(IServiceCollection services)
 {
